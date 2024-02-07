@@ -1,0 +1,340 @@
+{
+	"info": {
+		"_postman_id": "dee3539c-516e-4286-bb1d-8699d4eecff2",
+		"name": "CrystalCheque",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Journal",
+			"item": [
+				{
+					"name": "Get Journal",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "leke",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{endpointurl}}/api/{{version}}/journals/1/company/5ef79afd-9d91-476e-867f-a9e4601b2c70",
+							"host": [
+								"{{endpointurl}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"journals",
+								"1",
+								"company",
+								"5ef79afd-9d91-476e-867f-a9e4601b2c70"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Journal",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "ccadmin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n\t{\n\t\t\"Description\": \"PURCHASE A4 PAPER\",\n\t\t\"Amount\": 35000,\n\t\t\"EntryType\": \"DR\",\n\t\t\"Account\": {\n\t\t\t\"Id\": \"F315E18F-B24D-431C-8743-A0AF08B6BF1D\"\n\t\t},\n\t\t\"Currency\": {\n\t\t\t\"Id\": 1\n\t\t}\n\t},\n\t{\n\t\t\"Description\": \"PURCHASE A4 PAPER\",\n\t\t\"Amount\": 35000,\n\t\t\"EntryType\": \"CR\",\n\t\t\"Account\": {\n\t\t\t\"Id\": \"9B92A92F-1842-4DC6-980A-34CC98A6A6F1\"\n\t\t},\n\t\t\"Currency\": {\n\t\t\t\"Id\": 1\n\t\t}\n\t}\n]"
+						},
+						"url": {
+							"raw": "{{endpointurl}}/api/{{version}}/journals",
+							"host": [
+								"{{endpointurl}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"journals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Void Journal",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "ccadmin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "mayowa",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{endpointurl}}/api/{{version}}/journals/1/company/CE8B381E-3F51-4B1A-BC83-4B8D1C00F9D3/void",
+							"host": [
+								"{{endpointurl}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"journals",
+								"1",
+								"company",
+								"CE8B381E-3F51-4B1A-BC83-4B8D1C00F9D3",
+								"void"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Delete Account",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "ccadmin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{endpointurl}}/api/{{version}}/accounts/176a4c99-b8a7-4956-825c-e9e66f883bf7",
+							"host": [
+								"{{endpointurl}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"accounts",
+								"176a4c99-b8a7-4956-825c-e9e66f883bf7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Account w/ Trialbalance",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "ccadmin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"AccountNo\": 0,\n\t\"AccountName\": \"Automobiles \",\n\t\"Company\": {\n\t\t\"Id\": \"46A3E114-117E-4AA9-8C58-4069AEED1B8F\"\n\t},\n\t\"AccountType\": {\n\t\t\"Id\": 3\n\t},\n\t\"TrialBalance\": {\n\t\t\"Balance\": 4500\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{endpointurl}}/api/{{version}}/accounts",
+							"host": [
+								"{{endpointurl}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Accounts w/o Trialbalance",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "ccadmin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"AccountNo\": 0,\n\t\"AccountName\": \"Automobiles \",\n\t\"Company\": {\n\t\t\"Id\": \"CE8B381E-3F51-4B1A-BC83-4B8D1C00F9D3\"\n\t},\n\t\"AccountType\": {\n\t\t\"Id\": 3\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{endpointurl}}/api/{{version}}/accounts",
+							"host": [
+								"{{endpointurl}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vendor",
+			"item": [
+				{
+					"name": "Add Vendor",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "ccadmin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"VendorName\": \"Alayehu Trading Plc \",\n\t\"Company\": {\n\t\t\"Id\": \"CE8B381E-3F51-4B1A-BC83-4B8D1C00F9D3\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{endpointurl}}/api/{{version}}/vendors",
+							"host": [
+								"{{endpointurl}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"vendors"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
